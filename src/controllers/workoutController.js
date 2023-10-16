@@ -75,7 +75,8 @@ const createNewWorkout = (req, res) => {
 const updateOneWorkout = (req, res) => {
   const {
     body,
-    params: { workoutId },
+    params: { 
+      workoutId },
   } = req;
   if (!workoutId) {
     res

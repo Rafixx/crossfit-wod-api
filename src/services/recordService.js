@@ -1,6 +1,15 @@
 // In src/services/recordService.js
 const Record = require("../database/Record");
 
+const getAllRecords = () => {
+  try{
+    const allRecords = Record.getAllRecords()
+    return allRecords
+  }catch(error){
+    throw error
+  }
+}
+
 const getRecordForWorkout = (workoutId) => {
   try {
     const record = Record.getRecordForWorkout(workoutId);
@@ -9,4 +18,7 @@ const getRecordForWorkout = (workoutId) => {
     throw error;
   }
 };
-module.exports = { getRecordForWorkout };
+module.exports = { 
+  getAllRecords,
+  getRecordForWorkout,
+};
